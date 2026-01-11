@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Présentation - Mathis Michalakis</title>
+  <meta name="description" content="Présentation personnelle de Mathis Michalakis">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <style>
+    :root {
+      --fond-noir: #0a0a0a;
+      --couleur-primaire: #00ff41;
+      --couleur-secondaire: #00e0e0;
+      --couleur-texte: #00ff41;
+      --couleur-texte-dim: #00ff4180;
+      --couleur-gris: #1a1a1a;
+      --couleur-gris-clair: #2a2a2a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Share Tech Mono', monospace;
+      color: var(--couleur-texte-dim);
+      background-color: var(--fond-noir);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Matrix background effect */
+    #matrix-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.05;
+      background: 
+        linear-gradient(transparent 50%, rgba(0, 255, 65, 0.02) 50%),
+        linear-gradient(90deg, transparent 50%, rgba(0, 255, 65, 0.02) 50%);
+      background-size: 20px 20px;
+      animation: matrix-scroll 20s linear infinite;
+    }
+
+    @keyframes matrix-scroll {
+      0% { background-position: 0 0; }
+      100% { background-position: 20px 20px; }
+    }
+
+    /* Header */
+    #header {
+      background-color: rgba(10, 10, 10, 0.95);
+      padding: 1.5rem 0;
+      border-bottom: 2px solid var(--couleur-primaire);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 0 30px rgba(0, 255, 65, 0.4);
+      backdrop-filter: blur(15px);
+    }
+
+    .container-header {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #header .sitename {
+      color: var(--couleur-primaire);
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 1.8rem;
+      text-shadow: 0 0 15px var(--couleur-primaire), 0 0 30px var(--couleur-primaire);
+      letter-spacing: 2px;
+      animation: glow-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes glow-pulse {
+      0%, 100% {
+        text-shadow: 0 0 15px var(--couleur-primaire), 0 0 30px var(--couleur-primaire);
+      }
+      50% {
+        text-shadow: 0 0 20px var(--couleur-primaire), 0 0 40px var(--couleur-primaire), 0 0 50px var(--couleur-primaire);
+      }
+    }
+
+    #navmenu {
+      display: flex;
+      gap: 2rem;
+    }
+
+    #navmenu a {
+      color: var(--couleur-texte-dim);
+      text-decoration: none;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0.5rem 1rem;
+      border: 1px solid transparent;
+    }
+
+    #navmenu a::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--couleur-primaire);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    #navmenu a:hover::before,
+    #navmenu a.active::before {
+      width: 100%;
+    }
+
+    #navmenu a:hover,
+    #navmenu a.active {
+      color: var(--couleur-primaire);
+      text-shadow: 0 0 10px var(--couleur-primaire);
+      border: 1px solid var(--couleur-primaire);
+      box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+    }
+
+    /* Main Content */
+    main {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      padding: 120px 0 60px;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 60px;
+      padding: 40px 0;
+      position: relative;
+    }
+
+    .page-title h1 {
+      color: var(--couleur-primaire);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 
+        0 0 20px var(--couleur-primaire),
+        0 0 40px var(--couleur-primaire),
+        0 0 60px rgba(0, 255, 65, 0.5);
+      animation: glitch 4s infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes glitch {
+      0%, 100% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(2px, -2px); }
+      60% { transform: translate(-2px, -2px); }
+      80% { transform: translate(2px, 2px); }
+    }
+
+    .page-title h1::before {
+      content: '> ';
+      color: var(--couleur-primaire);
+    }
+
+    .page-title h1::after {
+      content: '_';
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    .breadcrumbs {
+      text-align: center;
+      margin-top: 20px;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    .breadcrumbs a {
+      color: var(--couleur-secondaire);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      border-bottom: 1px dotted var(--couleur-secondaire);
+    }
+
+    .breadcrumbs a:hover {
+      color: var(--couleur-primaire);
+      border-bottom-color: var(--couleur-primaire);
+    }
+
+    .breadcrumbs span {
+      color: var(--couleur-texte-dim);
+      margin: 0 10px;
+    }
+
+    /* About Section */
+    .about-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .about-container {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 50px;
+      background: linear-gradient(135deg, rgba(15, 15, 15, 0.98) 0%, rgba(20, 20, 20, 0.95) 100%);
+      border: 2px solid var(--couleur-primaire);
+      border-radius: 15px;
+      padding: 50px;
+      box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+      position: relative;
+      overflow: hidden;
+      align-items: start;
+    }
+
+    /* Simple scanning line */
+    .about-container::before {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--couleur-primaire), transparent);
+      animation: scan-line 4s linear infinite;
+    }
+
+    @keyframes scan-line {
+      0% { top: -100%; }
+      100% { top: 200%; }
+    }
+
+    .profile-image-section {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 20px;
+    }
+
+    .profile-img-wrapper {
+      position: relative;
+    }
+
+    .profile-img-wrapper::before {
+      content: '[ PROFILE_LOADED ]';
+      position: absolute;
+      top: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--couleur-secondaire);
+      font-size: 0.9rem;
+      font-family: 'Share Tech Mono', monospace;
+      white-space: nowrap;
+    }
+
+    .profile-img {
+      width: 300px;
+      height: 300px;
+      border: 3px solid var(--couleur-primaire);
+      border-radius: 50%;
+      box-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
+      filter: grayscale(100%) brightness(1.1) contrast(1.2);
+      transition: all 0.3s ease;
+      object-fit: cover;
+      object-position: center;
+      position: relative;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 50px rgba(0, 255, 65, 0.7);
+    }
+
+    .content-section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .content-section h2 {
+      color: var(--couleur-primaire);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      text-shadow: 0 0 15px var(--couleur-primaire);
+      letter-spacing: 2px;
+    }
+
+    .content-section h2::before {
+      content: '[ ';
+      color: var(--couleur-secondaire);
+    }
+
+    .content-section h2::after {
+      content: ' ]';
+      color: var(--couleur-secondaire);
+    }
+
+    .description {
+      color: var(--couleur-texte);
+      font-size: 1.1rem;
+      line-height: 1.9;
+      margin-bottom: 35px;
+      padding: 25px;
+      background: rgba(0, 255, 65, 0.05);
+      border-left: 4px solid var(--couleur-primaire);
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .description::before {
+      content: '>> ';
+      color: var(--couleur-secondaire);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      padding: 18px;
+      background: rgba(26, 26, 26, 0.9);
+      border: 2px solid var(--couleur-primaire);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .info-item:hover {
+      background: rgba(0, 255, 65, 0.1);
+      transform: translateX(5px);
+      box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+    }
+
+    .info-item i {
+      color: var(--couleur-primaire);
+      margin-right: 12px;
+      font-size: 1.4rem;
+      transition: all 0.3s ease;
+    }
+
+    .info-item:hover i {
+      transform: scale(1.1);
+    }
+
+    .info-item strong {
+      color: var(--couleur-secondaire);
+      margin-right: 10px;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .info-item span {
+      color: var(--couleur-texte);
+    }
+
+    /* Scroll indicator */
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--couleur-gris);
+      border: 2px solid var(--couleur-primaire);
+      color: var(--couleur-primaire);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    .scroll-top.active {
+      display: flex;
+    }
+
+    .scroll-top:hover {
+      background-color: var(--couleur-primaire);
+      color: var(--fond-noir);
+      transform: scale(1.1) rotate(360deg);
+      box-shadow: 0 0 20px rgba(0, 255, 65, 0.8);
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 992px) {
+      .container-header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      #navmenu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .about-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 30px;
+      }
+
+      .profile-image-section {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #header .sitename {
+        font-size: 1.4rem;
+      }
+
+      #navmenu {
+        gap: 5px;
+      }
+
+      #navmenu a {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      main {
+        padding: 100px 0 40px;
+      }
+
+      .page-title h1 {
+        font-size: 2rem;
+      }
+
+      .about-container {
+        padding: 30px 20px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .content-section h2 {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #header .sitename {
+        font-size: 1rem;
+      }
+
+      #navmenu a {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+      }
+
+      .profile-img {
+        width: 250px;
+        height: 250px;
+      }
+
+      .content-section h2 {
+        font-size: 1.4rem;
+      }
+
+      .description {
+        font-size: 1rem;
+        padding: 20px;
+      }
+
+      .about-container {
+        padding: 20px 15px;
+      }
+
+      .info-item {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="matrix-bg"></div>
+
+  <header id="header">
+    <div class="container-header">
+      <a href="index.html" style="text-decoration: none;">
+        <h1 class="sitename">MATHIS_MICHALAKIS</h1>
+      </a>
+      <nav id="navmenu">
+        <a href="index.html">ACCUEIL</a>
+        <a href="présentation.html" class="active">PRÉSENTATION</a>
+        <a href="cv.html">CV</a>
+        <a href="portfolio.html">PORTFOLIO</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="mentions-legales.html">MENTIONS LÉGALES</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-title">
+      <h1>Présentation</h1>
+      <div class="breadcrumbs">
+        <a href="index.html">Accueil</a>
+        <span>/</span>
+        <span style="color: var(--couleur-primaire);">Présentation</span>
+      </div>
+    </div>
+
+    <section class="about-section">
+      <div class="about-container">
+        <div class="profile-image-section">
+          <div class="profile-img-wrapper">
+            <img src="assets/img/profile-img.jpg" class="profile-img" alt="Mathis Michalakis">
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h2>profil</h2>
+          <div class="description">
+            Je m'appelle Mathis Michalakis. Je suis étudiant en première année du <strong style="color: var(--couleur-primaire);">BUT Réseaux et Télécommunications</strong> à l'IUT de Béthune. Je suis passionné par les réseaux informatiques et la sécurité des systèmes, je prévois de me spécialiser en cybersécurité à la fin de ma deuxième année. Mon ambition est de devenir <strong style="color: var(--couleur-secondaire);">hacker éthique</strong>, afin d'aider les entreprises à identifier et corriger leurs failles de sécurité.
+          </div>
+
+          <div class="info-grid">
+            <div class="info-item">
+              <i class="bi bi-calendar"></i>
+              <strong>Date de naissance :</strong>
+              <span>26 Mars 2007</span>
+            </div>
+            <div class="info-item">
+              <i class="bi bi-person"></i>
+              <strong>Âge :</strong>
+              <span>18 ans</span>
+            </div>
+            <div class="info-item">
+              <i class="bi bi-mortarboard"></i>
+              <strong>Niveau d'études :</strong>
+              <span>Baccalauréat</span>
+            </div>
+            <div class="info-item">
+              <i class="bi bi-geo-alt"></i>
+              <strong>Ville :</strong>
+              <span>Bruay-la-Buissière</span>
+            </div>
+            <div class="info-item" style="grid-column: 1 / -1;">
+              <i class="bi bi-envelope"></i>
+              <strong>Email :</strong>
+              <span>mathis.michalakis@outlook.fr</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <script>
+    // Scroll top button
+    const scrollTop = document.querySelector('.scroll-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        scrollTop.classList.add('active');
+      } else {
+        scrollTop.classList.remove('active');
+      }
+    });
+
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

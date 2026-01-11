@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mentions Légales - Mathis Michalakis</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --fond-noir: #0a0a0a;
+      --couleur-primaire: #00ff41;
+      --couleur-secondaire: #00e0e0;
+      --couleur-texte: #00ff41;
+      --couleur-texte-dim: #00ff4180;
+      --couleur-gris: #1a1a1a;
+      --couleur-gris-clair: #2a2a2a;
+      --hacker-glow: rgba(0, 255, 65, 0.5);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body.legal-page {
+      font-family: 'Share Tech Mono', monospace;
+      color: var(--couleur-texte);
+      background: var(--fond-noir);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Matrix background */
+    #matrix-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.05;
+      background: 
+        linear-gradient(transparent 50%, rgba(0, 255, 65, 0.02) 50%),
+        linear-gradient(90deg, transparent 50%, rgba(0, 255, 65, 0.02) 50%);
+      background-size: 20px 20px;
+      animation: matrix-scroll 20s linear infinite;
+    }
+
+    @keyframes matrix-scroll {
+      0% { background-position: 0 0; }
+      100% { background-position: 20px 20px; }
+    }
+
+    /* Header */
+    #header {
+      background-color: rgba(10, 10, 10, 0.9);
+      padding: 1.5rem 0;
+      border-bottom: 2px solid var(--couleur-primaire);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .container-header {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #header .sitename {
+      color: var(--couleur-primaire);
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 1.8rem;
+      text-shadow: 0 0 10px var(--couleur-primaire), 0 0 20px var(--couleur-primaire);
+      letter-spacing: 2px;
+    }
+
+    #navmenu {
+      display: flex;
+      gap: 2rem;
+    }
+
+    #navmenu a {
+      color: var(--couleur-texte-dim);
+      text-decoration: none;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0.5rem 1rem;
+      border: 1px solid transparent;
+    }
+
+    #navmenu a:hover,
+    #navmenu a.active {
+      color: var(--couleur-primaire);
+      text-shadow: 0 0 10px var(--couleur-primaire);
+      border: 1px solid var(--couleur-primaire);
+      box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+    }
+
+    .legal-section {
+      padding: 100px 0 60px;
+      min-height: 100vh;
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .legal-content {
+      background-color: rgba(15, 15, 15, 0.95);
+      border: 2px solid var(--couleur-primaire);
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+      position: relative;
+      overflow: hidden;
+      animation: glow-border 3s infinite;
+    }
+
+    @keyframes glow-border {
+      0%, 100% {
+        box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 50px rgba(0, 255, 65, 0.4);
+      }
+    }
+
+    .legal-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--couleur-primaire), transparent);
+      animation: scanline 3s linear infinite;
+    }
+
+    @keyframes scanline {
+      0% { top: 0; }
+      100% { top: 100%; }
+    }
+
+    h1 {
+      color: var(--couleur-primaire);
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 0 0 20px var(--couleur-primaire);
+      margin-bottom: 40px;
+      position: relative;
+      text-align: center;
+      animation: glitch 3s infinite;
+    }
+
+    @keyframes glitch {
+      0%, 100% { transform: translate(0); }
+      33% { transform: translate(-2px, 2px); }
+      66% { transform: translate(2px, -2px); }
+    }
+
+    h1::before {
+      content: '> ';
+      color: var(--couleur-primaire);
+    }
+
+    h1::after {
+      content: '_';
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    h2 {
+      color: var(--couleur-primaire);
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      border-left: 4px solid var(--couleur-primaire);
+      padding-left: 15px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px var(--hacker-glow);
+    }
+
+    h2::before {
+      content: '# ';
+      color: var(--couleur-primaire);
+    }
+
+    h3 {
+      color: var(--couleur-secondaire);
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+
+    h3::before {
+      content: '## ';
+      color: var(--couleur-secondaire);
+    }
+
+    p, li {
+      color: var(--couleur-texte);
+      line-height: 1.8;
+      margin-bottom: 15px;
+      text-shadow: 0 0 2px rgba(0, 255, 65, 0.3);
+    }
+
+    .credit-box {
+      background-color: rgba(5, 5, 5, 0.8);
+      border: 1px solid var(--couleur-primaire);
+      border-radius: 5px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .credit-box:hover {
+      border-color: var(--couleur-primaire);
+      box-shadow: 0 0 20px var(--hacker-glow);
+      transform: translateX(5px);
+    }
+
+    .credit-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .credit-box li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0, 255, 65, 0.2);
+    }
+
+    .credit-box li:last-child {
+      border-bottom: none;
+    }
+
+    .credit-box li::before {
+      content: '[+] ';
+      color: var(--couleur-primaire);
+      font-weight: bold;
+    }
+
+    a {
+      color: var(--couleur-primaire);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--couleur-primaire);
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 10px var(--hacker-glow);
+      border-bottom: 1px solid var(--couleur-primaire);
+    }
+
+    .terminal-prompt {
+      color: var(--couleur-primaire);
+      font-weight: bold;
+    }
+
+    .terminal-prompt::before {
+      content: 'root@mathis:~$ ';
+      color: var(--couleur-secondaire);
+    }
+
+    .footer {
+      background-color: rgba(10, 10, 10, 0.9);
+      border-top: 2px solid var(--couleur-primaire);
+      padding: 20px 0;
+      margin-top: 60px;
+    }
+
+    .footer p {
+      color: var(--couleur-primaire);
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--couleur-gris);
+      border: 2px solid var(--couleur-primaire);
+      color: var(--couleur-primaire);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    .scroll-top.active {
+      display: flex;
+    }
+
+    .scroll-top:hover {
+      background-color: var(--couleur-primaire);
+      color: var(--fond-noir);
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(0, 255, 65, 0.8);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .container-header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      #navmenu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .legal-content {
+        padding: 30px 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #header .sitename {
+        font-size: 1.4rem;
+      }
+
+      #navmenu {
+        gap: 5px;
+      }
+
+      #navmenu a {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .legal-content {
+        padding: 25px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #header .sitename {
+        font-size: 1rem;
+      }
+
+      #navmenu a {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .legal-content {
+        padding: 20px 10px;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="legal-page">
+  <div id="matrix-bg"></div>
+
+  <header id="header">
+    <div class="container-header">
+      <a href="index.html" style="text-decoration: none;">
+        <h1 class="sitename">MATHIS_MICHALAKIS</h1>
+      </a>
+      <nav id="navmenu">
+        <a href="index.html">ACCUEIL</a>
+        <a href="présentation.html">PRÉSENTATION</a>
+        <a href="cv.html">CV</a>
+        <a href="portfolio.html" class="active">PORTFOLIO</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="mentions-legales.html">MENTIONS LÉGALES</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="legal-section">
+      <div class="container">
+        <div class="legal-content" data-aos="fade-up">
+          <h1>Mentions Légales</h1>
+
+          <h2>Identification de l'éditeur</h2>
+          <p>
+            Ce site web personnel est édité par <strong>Mathis Michalakis</strong>.<br>
+            Étudiant en 1ère année BUT Réseaux et Télécommunications.<br>
+            Localisation : France
+          </p>
+
+          <h2>Hébergement</h2>
+          <p>
+            Ce site est hébergé par <strong>GitHub Pages</strong>.<br>
+            GitHub, Inc.<br>
+            88 Colin P Kelly Jr St<br>
+            San Francisco, CA 94107<br>
+            États-Unis<br>
+            <a href="https://github.com/" target="_blank">https://github.com/</a>
+          </p>
+
+          <h2>Directeur de publication</h2>
+          <p>
+            <strong>Mathis Michalakis</strong><br>
+            Pour toute question, vous pouvez me contacter via la page <a href="contact.html">Contact</a>.
+          </p>
+
+          <h2>Protection des données personnelles</h2>
+          <p>
+            Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi n°78-17 du 6 janvier 1978 
+            relative à l'Informatique, aux Fichiers et aux Libertés, vous disposez d'un droit d'accès, de rectification 
+            et de suppression des données vous concernant.
+          </p>
+          <p>
+            Ce site ne collecte aucune donnée personnelle sans votre consentement explicite.
+          </p>
+
+          <h2>Propriété intellectuelle</h2>
+          <p>
+            L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur 
+            et la propriété intellectuelle. Toute reproduction totale ou partielle sans autorisation expresse 
+            est interdite.
+          </p>
+
+          <h1 style="margin-top: 60px;">Crédits & Licences</h1>
+          <p class="terminal-prompt">Initialisation des modules système...</p>
+
+          <div class="credit-box" data-aos="fade-up" data-aos-delay="100">
+            <h3>Intelligence Artificielle</h3>
+            <ul>
+              <li>
+                <strong>Claude.AI (Anthropic)</strong> - Assistance au développement et optimisation du code<br>
+                <a href="https://claude.ai/" target="_blank">https://claude.ai/</a><br>
+                <span style="color: #00cc33;">© Anthropic PBC. Tous droits réservés.</span>
+              </li>
+              <li>
+                <strong>Google Gemini</strong> - Assistance à la création de contenu et recherche<br>
+                <a href="https://gemini.google.com/" target="_blank">https://gemini.google.com/</a><br>
+                <span style="color: #00cc33;">© Google LLC. Tous droits réservés.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="credit-box" data-aos="fade-up" data-aos-delay="200">
+            <h3>Frameworks & Bibliothèques</h3>
+            <ul>
+              <li>
+                <strong>Bootstrap 5.3.3</strong> - Framework CSS responsive<br>
+                <a href="https://getbootstrap.com/" target="_blank">https://getbootstrap.com/</a><br>
+                <span style="color: #00cc33;">© Bootstrap Team. Licence MIT.</span>
+              </li>
+              <li>
+                <strong>Bootstrap Icons</strong> - Bibliothèque d'icônes open-source<br>
+                <a href="https://icons.getbootstrap.com/" target="_blank">https://icons.getbootstrap.com/</a><br>
+                <span style="color: #00cc33;">© Bootstrap Team. Licence MIT.</span>
+              </li>
+              <li>
+                <strong>AOS (Animate On Scroll)</strong> - Animations au défilement<br>
+                <a href="https://michalsnik.github.io/aos/" target="_blank">https://michalsnik.github.io/aos/</a><br>
+                <span style="color: #00cc33;">Licence MIT.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="credit-box" data-aos="fade-up" data-aos-delay="300">
+            <h3>Template & Design</h3>
+            <ul>
+              <li>
+                <strong>Personal - BootstrapMade</strong><br>
+                Template Bootstrap utilisé comme base pour le design<br>
+                <a href="https://bootstrapmade.com/personal-free-resume-bootstrap-template/" target="_blank">https://bootstrapmade.com/</a><br>
+                <span style="color: #00cc33;">© BootstrapMade.com. Licence spécifique.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="credit-box" data-aos="fade-up" data-aos-delay="400">
+            <h3>Polices & Typographie</h3>
+            <ul>
+              <li>
+                <strong>Google Fonts</strong> - Roboto, Poppins, Raleway, Courier Prime, Share Tech Mono<br>
+                <a href="https://fonts.google.com/" target="_blank">https://fonts.google.com/</a><br>
+                <span style="color: #00cc33;">© Google. Licences SIL Open Font License.</span>
+              </li>
+            </ul>
+          </div>
+
+          <p class="terminal-prompt" style="margin-top: 40px;">Système chargé avec succès. [OK]</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Mathis Michalakis - Tous droits réservés</p>
+      <p style="font-size: 0.9em; color: var(--couleur-secondaire);">
+        Site personnel - BUT Réseaux & Télécommunications
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <script>
+    // Initialize AOS
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+      });
+    }
+
+    // Scroll top button
+    const scrollTop = document.querySelector('.scroll-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        scrollTop.classList.add('active');
+      } else {
+        scrollTop.classList.remove('active');
+      }
+    });
+
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+
+</html>
